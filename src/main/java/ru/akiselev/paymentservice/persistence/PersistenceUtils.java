@@ -29,15 +29,6 @@ public class PersistenceUtils {
         }
     }
 
-    public static <T> Long getLongValue(final Field field, final T entity) {
-        try {
-            field.setAccessible(true);
-            return (Long) field.get(entity);
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException("Cannot get field value.", e);
-        }
-    }
-
     public static <T> void setValueIfNull(final Field field, final T entity, final Object value) {
         try {
             field.setAccessible(true);
